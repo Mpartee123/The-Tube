@@ -1,7 +1,8 @@
 var database = firebase.database();
 
 function timeClock() {
-    var currentTime = moment().toString();
+    var currentTime = moment().format("dddd hh:mm.ss");
+        currentTime.toString();
     $("#current-time").html(currentTime);
     // console.log(currentTime);
     setTimeout(function () {
@@ -32,7 +33,12 @@ $("#submit").on("click", function (event) {
         frequency: frequency
     });
 
+    $('#train-input').trigger("reset");
+
+
 });
+
+
 
 database.ref().on("child_added", function (childSnapshot) {
     console.log(childSnapshot.val().trainName);
