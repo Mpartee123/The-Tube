@@ -1,0 +1,14 @@
+body{
+    background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fa%2Faa%2FLancaster_Gate_tube.jpg&f=1");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*html{*/
+    /*background: url(https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fa%2Faa%2FLancaster_Gate_tube.jpg&f=1) no-repeat center center fixed;*/
+/*}*/
+
+#current-train-schedule{
+    margin-top: 12%;
+}

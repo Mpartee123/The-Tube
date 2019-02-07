@@ -11,6 +11,8 @@
 
 <div id="current-train-schedule" class="card mx-auto" style="width: 75%">
     <!--<div class="card-header"> Current Train Schedule</div>-->
+    <!--<img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fojharper.com%2Fwp-content%2Fuploads%2F2015%2F07%2Flondon-underground-logo.jpg&f=1"-->
+         <!--class="card-img-top" alt="...">-->
     <div class="card text-center">
         <div class="card-header">Any Time Is Train Time!!
             <ul class="nav nav-tabs card-header-tabs">
@@ -22,41 +24,41 @@
                 </li>
             </ul>
         </div>
-    <div class="card-body">
-        <div class="time-container row">
-            <h3 class="col d-flex justify-content-end">The time is now: </h3>
-            <h3 class="col d-flex justify-content-start" id="current-time"></h3>
+        <div class="card-body">
+            <div class="time-container row">
+                <h3 class="col d-flex justify-content-end">The time is now: </h3>
+                <h3 class="col d-flex justify-content-start" id="current-time"></h3>
+            </div>
+
+            <table id="schedule">
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency(min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                </tr>
+
+            </table>
         </div>
-
-        <table id="schedule">
-            <tr>
-                <th>Train Name</th>
-                <th>Destination</th>
-                <th>Frequency(min)</th>
-                <th>Next Arrival</th>
-                <th>Minutes Away</th>
-            </tr>
-
-        </table>
     </div>
-</div>
 
 
-<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-<script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyCFZjb98NtM-s6mREyr3EQBNIv63qqykiY",
-        authDomain: "train-scheduler-a8ffb.firebaseapp.com",
-        databaseURL: "https://train-scheduler-a8ffb.firebaseio.com",
-        projectId: "train-scheduler-a8ffb",
-        storageBucket: "train-scheduler-a8ffb.appspot.com",
-        messagingSenderId: "375844229389"
-    };
-    firebase.initializeApp(config);
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCFZjb98NtM-s6mREyr3EQBNIv63qqykiY",
+            authDomain: "train-scheduler-a8ffb.firebaseapp.com",
+            databaseURL: "https://train-scheduler-a8ffb.firebaseio.com",
+            projectId: "train-scheduler-a8ffb",
+            storageBucket: "train-scheduler-a8ffb.appspot.com",
+            messagingSenderId: "375844229389"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
