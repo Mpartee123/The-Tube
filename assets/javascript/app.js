@@ -12,28 +12,35 @@ setInterval(function () {
     timeClock();
 }, 1000);
 
+//var valid = moment(timeStr, "HH:mm", true).isValid();
 // Handle train adding
 $("#submit").on("click", function (event) {
     event.preventDefault();
 
-    var trainName = $('#train-name').val().trim();
-    var destination = $('#destination').val().trim();
     var firstTrainTime = $('#fist-train-time').val().trim();
-    var frequency = $('#frequency').val().trim();
 
-    console.log(trainName);
-    console.log(destination);
-    console.log(firstTrainTime);
-    console.log(frequency);
+    if (moment(firstTrainTime, "HH:mm", true).isValid()) {
+        var destination = $('#destination').val().trim();
+        var trainName = $('#train-name').val().trim();
+        // var valid = moment(firstTrainTime, "HH:mm:ss", true).isValid();
+        var frequency = $('#frequency').val().trim();
 
-    database.ref().push({
-        trainName: trainName,
-        destination: destination,
-        firstTrainTime: firstTrainTime,
-        frequency: frequency
-    });
+        console.log(trainName);
+        console.log(destination);
+        console.log(firstTrainTime);
+        console.log(frequency);
 
-    $('#train-input').trigger("reset");
+        database.ref().push({
+            trainName: trainName,
+            destination: destination,
+            firstTrainTime: firstTrainTime,
+            frequency: frequency
+        });
+
+        $('#train-input').trigger("reset");
+    } else {
+        alert('Please enter a time in the 24 hour format')
+    }
 });
 
 function calculateAndRenderSchedule(childSnapshot) {
@@ -46,10 +53,20 @@ function calculateAndRenderSchedule(childSnapshot) {
     var trainDest = train.destination;
     var trainFreq = Number(train.frequency);
     var trainTime = train.firstTrainTime;
+    var trainTimeCalculated = train.firstTrainTime.split(':');
+    var currentTime = moment().toObject();
     var diffTime = moment().diff(moment(trainTime, "HH:mm").subtract(1, "years"), "minutes");
     var timeRemaining = diffTime % trainFreq;
     var minutesUntilNextTrain = trainFreq - timeRemaining;
     var nextTrain = moment().add(minutesUntilNextTrain, "minutes");
+
+    if (Number(trainTimeCalculated[0])>currentTime.hours){
+        nextTrain = moment(trainTime, "HH:mm");
+        var timeNow =moment();
+        var nextTrainArrival =moment().set({'hour': trainTimeCalculated[0], 'minute': trainTimeCalculated[1]});
+        var minutesAdjusted=timeNow.from(nextTrainArrival).split(' ');
+        minutesUntilNextTrain=minutesAdjusted[0];
+    }
 
     // Render
     var existingTrainRow = $('#' + trainKey);
@@ -60,10 +77,9 @@ function calculateAndRenderSchedule(childSnapshot) {
     trainRow.empty();
     trainRow.append($("<td>").text(trainName));
     trainRow.append($("<td>").text(trainDest));
-    trainRow.append($("<td>").text(trainFreq));
+    trainRow.append($("<td>").text(train.frequency));
     trainRow.append($("<td>").text(moment(nextTrain).format("hh:mm")));
     trainRow.append($("<td>").text(minutesUntilNextTrain));
-
     $("#schedule").append(trainRow);
 }
 
@@ -77,10 +93,3 @@ database.ref().on("child_added", function (childSnapshot) {
         calculateAndRenderSchedule(childSnapshot);
     }, 5000);
 });
-
-// set ending time to to midnight of that same day or for one day later
-
-// populate the times that the train will come during that period in a for loop
-
-// post times to the corresponding element in the html
-
