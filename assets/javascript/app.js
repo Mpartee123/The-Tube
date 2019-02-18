@@ -64,8 +64,9 @@ function calculateAndRenderSchedule(childSnapshot) {
         nextTrain = moment(trainTime, "HH:mm");
         var timeNow =moment();
         var nextTrainArrival =moment().set({'hour': trainTimeCalculated[0], 'minute': trainTimeCalculated[1]});
-        var minutesAdjusted=timeNow.from(nextTrainArrival).split(' ');
-        minutesUntilNextTrain=minutesAdjusted[0];
+        var adjustedTime=moment.duration(nextTrainArrival.diff(timeNow));
+        // minutesUntilNextTrain= moment.duration(nextTrainArrival.diff(timeNow));
+        minutesUntilNextTrain= adjustedTime._data.hours*60 + adjustedTime._data.minutes;
     }
 
     // Render
@@ -89,7 +90,7 @@ database.ref().on("child_added", function (childSnapshot) {
 
     calculateAndRenderSchedule(childSnapshot);
 
-    setInterval(function () {
-        calculateAndRenderSchedule(childSnapshot);
-    }, 5000);
+    // setInterval(function () {
+    //     calculateAndRenderSchedule(childSnapshot);
+    // }, 5000);
 });
