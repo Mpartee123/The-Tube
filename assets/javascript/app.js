@@ -90,7 +90,7 @@ database.ref().on("child_added", function (childSnapshot) {
 
     calculateAndRenderSchedule(childSnapshot);
 
-    // setInterval(function () {
-    //     calculateAndRenderSchedule(childSnapshot);
-    // }, 5000);
+    setInterval(function () {
+        calculateAndRenderSchedule(childSnapshot);
+    }, 5000);
 });
