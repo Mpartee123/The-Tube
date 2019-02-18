@@ -1,14 +1,25 @@
-body{
-    background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fa%2Faa%2FLancaster_Gate_tube.jpg&f=1");
-    background-position: center;
-    background-repeat: no-repeat;
+
+body {
+    background: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fa%2Faa%2FLancaster_Gate_tube.jpg&f=1") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+    position: relative;
 }
 
-/*html{*/
-    /*background: url(https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fa%2Faa%2FLancaster_Gate_tube.jpg&f=1) no-repeat center center fixed;*/
-/*}*/
+table{
+    margin: 0 auto;
+}
 
 #current-train-schedule{
-    margin-top: 12%;
+    background-color: transparent;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card{
+    border: none;
 }

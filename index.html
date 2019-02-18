@@ -8,41 +8,37 @@
 </head>
 
 <body>
-
-<div id="current-train-schedule" class="card mx-auto" style="width: 75%">
-    <!--<div class="card-header"> Current Train Schedule</div>-->
-    <!--<img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fojharper.com%2Fwp-content%2Fuploads%2F2015%2F07%2Flondon-underground-logo.jpg&f=1"-->
-         <!--class="card-img-top" alt="...">-->
-    <div class="card text-center">
-        <div class="card-header">Any Time Is Train Time!!
-            <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html">Train Schedule</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="add-train.html">Add a Train</a>
-                </li>
-            </ul>
-        </div>
-        <div class="card-body">
-            <div class="time-container row">
-                <h3 class="col d-flex justify-content-end">The time is now: </h3>
-                <h3 class="col d-flex justify-content-start" id="current-time"></h3>
+    <div id="current-train-schedule" class=" card mx-auto" style="width: 75%">
+        <div class="card text-center main-schedule">
+            <div class="card-header">Any Time Is Train Time!!
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Train Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-train.html">Add a Train</a>
+                    </li>
+                </ul>
             </div>
+            <div class="card-body">
+                <div class="time-container row">
+                    <h3 class="col d-flex justify-content-end">The time is now: </h3>
+                    <h3 class="col d-flex justify-content-start" id="current-time"></h3>
+                </div>
 
-            <table id="schedule">
-                <tr>
-                    <th>Train Name</th>
-                    <th>Destination</th>
-                    <th>Frequency(min)</th>
-                    <th>Next Arrival</th>
-                    <th>Minutes Away</th>
-                </tr>
+                <table id="schedule">
+                    <tr>
+                        <th>Train Name</th>
+                        <th>Destination</th>
+                        <th>Frequency(min)</th>
+                        <th>Next Arrival</th>
+                        <th>Minutes Away</th>
+                    </tr>
 
-            </table>
+                </table>
+            </div>
         </div>
     </div>
-
 
     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
     <script>
