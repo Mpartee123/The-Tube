@@ -1,18 +1,13 @@
 
 body {
-    background: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fa%2Faa%2FLancaster_Gate_tube.jpg&f=1") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
     position: relative;
 }
 
-table{
+table {
     margin: 0 auto;
 }
 
-#current-train-schedule{
+#current-train-schedule {
     background-color: transparent;
     position: fixed;
     top: 50%;
@@ -20,11 +15,30 @@ table{
     transform: translate(-50%, -50%);
 }
 
-.card{
+.card {
     border: none;
 }
 
-input{
+input {
     border: solid 1px;
     border-radius: 5px;
+}
+
+#bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+}
+
+#bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
 }
