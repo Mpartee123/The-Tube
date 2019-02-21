@@ -1,6 +1,6 @@
 
 body {
-    background: url(../images/theTube.jpeg) no-repeat fixed center;
+    background: url(https://anglotees.com/wp-content/uploads/2015/06/Lancaster_Gate_tube.jpg) no-repeat fixed center;
     background-size: cover;
     position: relative;
 }
@@ -29,16 +29,16 @@ input {
 
 th {
     padding: 1rem;
-    background-color: rgb(231,234,95,0.7);
+    background-color: rgba(231,234,95,0.7);
 }
 
 td {
     padding: 1rem;
 }
 tr{
-    background-color: rgb(151,136,101,0.4);
+    background-color: rgba(151,136,101,0.4);
 }
 
 tr:nth-child(even) {
-    background-color: rgb(151,136,101,0.2);
+    background-color: rgba(151,136,101,0.2);
 }
