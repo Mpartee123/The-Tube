@@ -10,11 +10,26 @@ table {
 }
 
 #current-train-schedule {
-    background-color: transparent;
+    /*background-color: transparent;*/
+    /*position: fixed;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%, -50%);*/
+
+
+    /*display: -webkit-flex;*/
+    /*display: flex;*/
+    /*-webkit-align-items: center;*/
+    /*align-items: center;*/
+    /*-webkit-justify-content: center;*/
+    /*justify-content: center;*/
+
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 12.5%;
+    left: 12.5%;
+
+    /*margin-top:auto;*/
+    /*margin-bottom: auto;*/
 }
 
 /*.card {*/
