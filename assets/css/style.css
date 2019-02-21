@@ -1,5 +1,7 @@
 
 body {
+    background: url(../images/theTube.jpeg) no-repeat fixed center;
+    background-size: cover;
     position: relative;
 }
 
@@ -15,30 +17,28 @@ table {
     transform: translate(-50%, -50%);
 }
 
-.card {
-    border: none;
-}
+/*.card {*/
+/*border: none;*/
+/*}*/
 
 input {
     border: solid 1px;
     border-radius: 5px;
+    width: 50%;
 }
 
-#bg {
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+th {
+    padding: 1rem;
+    background-color: rgb(231,234,95,0.7);
 }
 
-#bg img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    min-width: 50%;
-    min-height: 50%;
+td {
+    padding: 1rem;
+}
+tr{
+    background-color: rgb(151,136,101,0.4);
+}
+
+tr:nth-child(even) {
+    background-color: rgb(151,136,101,0.2);
 }
