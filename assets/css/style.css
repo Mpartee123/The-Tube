@@ -11,6 +11,7 @@ body {
 body {
     background: url("../images/theTube.jpeg") no-repeat center fixed;
     background-size: cover;
+    font-family: 'Cinzel', serif;
 }
 
 
@@ -47,14 +48,17 @@ table {
 
 }
 
-/*.card {*/
-/*border: none;*/
-/*}*/
-
+.card {
+border: none;
+    min-width: 60%;
+}
+.large-font{
+    font-size: 2rem;
+}
 input {
     border: solid 1px;
     border-radius: 5px;
-    width: 50%;
+    width: 70%;
 }
 
 th {
@@ -71,4 +75,11 @@ tr{
 
 tr:nth-child(even) {
     background-color: rgba(151,136,101,0.2);
+}
+
+.input-form{
+    width: 60%;
+}
+.yellow{
+    background-color: rgba(231,234,95,0.7);
 }

@@ -12,24 +12,15 @@ setInterval(function () {
     timeClock();
 }, 1000);
 
-//var valid = moment(timeStr, "HH:mm", true).isValid();
-// Handle train adding
+
 $("#submit").on("click", function (event) {
     event.preventDefault();
 
+    var frequency = $('#frequency').val().trim();
     var firstTrainTime = $('#fist-train-time').val().trim();
-
-    if (moment(firstTrainTime, "HH:mm", true).isValid()) {
+    if ((moment(firstTrainTime, "HH:mm", true).isValid()) && (Number.isInteger(Number(frequency)))) {
         var destination = $('#destination').val().trim();
         var trainName = $('#train-name').val().trim();
-        // var valid = moment(firstTrainTime, "HH:mm:ss", true).isValid();
-        var frequency = $('#frequency').val().trim();
-
-        console.log(trainName);
-        console.log(destination);
-        console.log(firstTrainTime);
-        console.log(frequency);
-
         database.ref().push({
             trainName: trainName,
             destination: destination,
@@ -39,7 +30,7 @@ $("#submit").on("click", function (event) {
 
         $('#train-input').trigger("reset");
     } else {
-        alert('Please enter a time in the 24 hour format')
+        alert('Input validation failed. Please check your inputs and try again.')
     }
 });
 
